@@ -2,13 +2,13 @@
 
 ## Overview
 
-This lesson will introduce you to shotgun and how to use it with Sinatra apps. We'll also cover troubleshooting common problems that you might encounter when running `shotgun`. 
+This lesson will introduce you to shotgun and how to use it with Sinatra apps. We'll also cover troubleshooting common problems that you might encounter when running `shotgun`.
 
 ## Objectives
 
-1. Explain how using `rackup` to start a Sinatra application will only read the code once at boot 
+1. Explain how using `rackup` to start a Sinatra application will only read the code once at boot
 2. Describe how `shotgun` allows for automatic code reloading
-3. Install shotgun and require it in an application's `Gemfile` 
+3. Install shotgun and require it in an application's `Gemfile`
 4. Start and stop a rack or Sinatra application with shotgun
 5. Troubleshoot common `shotgun` errors including "command not found, "bundler error", and "port in use."
 
@@ -19,7 +19,6 @@ Make sure you run `bundle install` to install the gems in our `Gemfile`. If your
 ## Why shotgun
 
 Normally when we develop simple Rack applications like Sinatra applications, we start our application server with `rackup` and load `config.ru`.
-
 For the purpose of this lesson, fork and clone this repo. There are, however, no tests to pass. In your terminal, go ahead and enter `rackup app.rb`. This will start up a rack server. You should see something like this:
 
 <img src="https://s3.amazonaws.com/learn-verified/rackup.png">
@@ -31,11 +30,11 @@ When starting an application with `rackup`, our application code is read once on
 Now add some more text to the string in the controller action:
 
 ```ruby
-  get '/' do 
+  get '/' do
     "Welcome to your app!!!! I BUILT THIS!"
   end
 ```
-Refresh the page in the browser. You should just see `Welcome to your app!!!!`. That's because rack isn't aware that we made changes. You can shut down your server by going back to terminal and hitting `ctrl` + `c`. 
+Refresh the page in the browser. You should just see `Welcome to your app!!!!`. That's because rack isn't aware that we made changes. You can shut down your server by going back to terminal and hitting `ctrl` + `c`.
 
 Start your server back up by entering `rackup app.rb` and now try visiting `localhost:9292` in the browser. It should work and you should see the text `Welcome to your app!!!! I BUILT THIS!` in your browser window.
 
@@ -112,7 +111,7 @@ $ bundle exec shotgun
 
 ### bundler error
 
-You might get an error about `bundler` that will tell you to run `bundle install`. 
+You might get an error about `bundler` that will tell you to run `bundle install`.
 It'll look like this:
 
 ```
